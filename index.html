@@ -24,7 +24,7 @@
 
     <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
     <!-- Try swapping to example3.css or another, and take a look at each example.css to see if you understand it-->
-    <link rel="stylesheet" type="text/css" href="Example2.css">
+    <link rel="stylesheet" type="text/css" href="Example3.css">
     <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
 
     <!-- This is a link to the vega-lite packages which we're using to make graphs -->
@@ -103,6 +103,17 @@
         <!-- You'll need to change the id of the figure "<figure id="Location2"... -->
         <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
 
+    <section>
+        <div class="chart-description">
+            <h2>Section 4: Graphic trial - Seminar 2</h2>
+            <p> <!-- Here we are trying a new type of chart from Vegalite lybrary
+            </p>
+        </div>
+
+        <!-- This element will contain our vega-lite chart -->
+        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+
+    </section>
 
     <!-- This is a script, it's a way to run JavaScript code on the page -->
     <script>
@@ -121,11 +132,10 @@
         let figure_3_spec = "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/visualization.vl.json"; // store the new graph from vegalite
 
         vegaEmbed('#Location3', figure_3_spec)
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
-        // e.g. 
-        // let figure_2_spec = ...
-        // vegaEmbed('#Location2', figure_2_spec)
+
+        let figure_4_spec = "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/visualization.vl%20(1).json"
+
+        vegaEmbed ('#Location4', figure_4_spec)
 
 
     </script>
