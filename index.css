@@ -37,16 +37,13 @@ GRID CONFIGURATION
     align-items: center;
 }
 /*Hero uses the 3 grid */
-.hero-grid {
+.layout-grid .hero {
   grid-column: 1 / -1;
-  color: white;
   padding: 80px 20px;
-  text-align: center;
 }
 
 .hero-content {
     padding-left: 10%;
-    max-width: 1000px;
 }
 
 /*Upper subtitle */
