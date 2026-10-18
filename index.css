@@ -44,12 +44,11 @@ body { /* We can style any HTML element by using its name - here we're styling t
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
+    text-align:right;
     color: #fff;
     margin-bottom: 15px;
     backdrop-filter: blur(5px);
     border-radius: 15px;
-
-
 }
 
 .hero-tag::before {
