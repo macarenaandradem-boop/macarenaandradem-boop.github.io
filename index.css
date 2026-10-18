@@ -17,6 +17,74 @@ body { /* We can style any HTML element by using its name - here we're styling t
   padding-top: 60px;
 }
 
+/* +++++++++++++++++++++++++++++++++++++++
+  HERO PHOTOGRAPHY
+   +++++++++++++++++++++++++++++++++++++++ */
+
+  .hero {
+    height: 100vh;
+    background-image: url('bike.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    padding-left: 10%;
+    max-width: 600px;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 15px;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+}
+
+.hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.hero h1 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 1.6;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.hero-credit {
+    position: absolute;
+    bottom: 20px;
+    right: 7.5%;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #ffffff;
+}
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
