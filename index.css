@@ -18,7 +18,8 @@ body { /* We can style any HTML element by using its name - here we're styling t
    +++++++++++++++++++++++++++++++++++++++ */
 
   .hero {
-    height: 100vh;
+    height: 80vh;
+    width: 100%;
     background-image: url('bike.jpg');
     background-size: cover;
     background-position: center;
