@@ -37,7 +37,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
 
 .hero-tag {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient((rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 10px 20px;
     font-size: 0.85rem;
@@ -48,6 +48,8 @@ body { /* We can style any HTML element by using its name - here we're styling t
     margin-bottom: 15px;
     backdrop-filter: blur(5px);
     border-radius: 15px;
+
+
 }
 
 .hero-tag::before {
