@@ -29,7 +29,7 @@ GRID CONFIGURATION
    +++++++++++++++++++++++++++++++++++++++ */
 
   .hero {
-    height: 80vh;
+    height: 70vh;
     background-image: url('bike.jpg');
     background-size: cover;
     background-position: center;
@@ -39,7 +39,7 @@ GRID CONFIGURATION
 /*Hero uses the 3 grid */
 .layout-grid .hero {
   grid-column: 1 / -1;
-  padding: 80px 20px;
+  padding: 10px 20px;
 }
 
 .hero-content {
