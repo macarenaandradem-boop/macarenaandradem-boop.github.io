@@ -38,6 +38,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 10px 20px;
+    text-align: left;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 3px;
