@@ -81,7 +81,7 @@ GRID CONFIGURATION
 .hero-subtitle {
     font-size: 1.5rem;
     color: #fff;
-    backdrop-filter: blur(5px)
+    backdrop-filter: blur(5px);
     line-height: 1.6;
     font-weight: 600;
     margin-top: 10px;
