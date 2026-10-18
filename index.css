@@ -30,7 +30,6 @@ GRID CONFIGURATION
 
   .hero {
     height: 80vh;
-    width: 100vh;
     background-image: url('bike.jpg');
     background-size: cover;
     background-position: center;
@@ -38,7 +37,7 @@ GRID CONFIGURATION
     align-items: center;
 }
 /*Hero uses the 3 grid */
-.layout-grid .hero {
+.hero-grid {
   grid-column: 1 / -1;
   color: white;
   padding: 80px 20px;
