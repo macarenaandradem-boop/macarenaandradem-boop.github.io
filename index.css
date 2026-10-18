@@ -8,7 +8,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
   line-height: 1.6;
   background-color: #fff;
   margin:0 auto;
-  /*padding-top: 60px;*/
+  padding-top: 0px;
 }
 
 /*+++++++++++++++++++++++++++++++++++++++ 
@@ -70,7 +70,7 @@ GRID CONFIGURATION
     height: 8px;
     background: #fff;
     border-radius: 50%;
-    /*margin-right: 12px;*/
+    margin-right: 12px;
 }
 
 /*Main title*/
