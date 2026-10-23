@@ -107,7 +107,20 @@
         <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
     </section>
+    
+    <section>
+        <div class="chart-description">
+            <h2>Section 5:Pulling data from API</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
+                As a first example, we're using a basic chart from our repo.
+            </p>
+        </div>
 
+        <!-- This element will contain our vega-lite chart -->
+        <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+
+    </section>
     <!-- This is a script, it's a way to run JavaScript code on the page -->
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
@@ -130,6 +143,9 @@
 
         vegaEmbed ('#Location4', figure_4_spec)
 
+        let figure_5_spec = "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/visualization.vl%20(3).json"
+
+        vegaEmbed ('#Location5', figure_5_spec)
 
     </script>
 
