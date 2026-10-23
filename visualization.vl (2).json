@@ -1,0 +1,14 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "xx",
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/kor/indicator/SP.DYN.TFRT.IN?format=json",
+    "format": {"property": "[1]"}
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "date", "type": "temporal"},
+    "y": {"field": "value", "type": "quantitative"}
+  },
+  "config": {}
+}
