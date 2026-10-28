@@ -161,7 +161,7 @@ BUTTOM
 ++++++++++++++++++++++++++++++++++++++ */ 
 
 /* CSS */
-.button-17 {
+.btn {
   align-items: center;
   appearance: none;
   background-color: #fff;
@@ -210,22 +210,22 @@ BUTTOM
   border: 2px solid #4285f4;
 }
 
-.button-17:not(:disabled) {
+.btn:not(:disabled) {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
-.button-17:not(:disabled):hover {
+.btn:not(:disabled):hover {
   box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
 }
 
-.button-17:not(:disabled):focus {
+.btn:not(:disabled):focus {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
-.button-17:not(:disabled):active {
+.btn:not(:disabled):active {
   box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
 }
 
-.button-17:disabled {
+.btn:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
