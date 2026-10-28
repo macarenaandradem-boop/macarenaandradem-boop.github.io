@@ -21,7 +21,7 @@
     "strokeOpacity": 0
   },
   "data": {
-    "url": "https://api.economicsobservatory.com/bra/gdpp?vega",
+    "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CL-GDP_per_capita.csv",
     "format": {
       "type": "json"
     }
