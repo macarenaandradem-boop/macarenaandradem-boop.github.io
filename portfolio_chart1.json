@@ -1,14 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "GDP per capita in Brazil",
+    "text": "GDP per capita in Chile",
     "anchor": "start",
-    "subtitle": "Current BRL | Source: IGBE through ECO API",
+    "subtitle": "GDP per capita (current US$) - Chile | Source: World Bank",
     "fontSize": "14",
     "subtitleFontSize": "12",
     "color": "#000000",
     "subtitleColor": "#000000"
   },
+
+
   "height": "250",
   "width": "container",
   "autosize": {
@@ -22,21 +24,18 @@
   },
   "data": {
     "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CL-GDP_per_capita.csv",
-    "format": {
-      "type": "json"
-    }
   },
   "mark": {
     "type": "point",
     "color": "#0c7583",
-    "strokeWidth": "2"
+    "strokeWidth": "2",
   },
   "encoding": {
     "x": {
-      "field": "year",
+      "field": "Year",
       "type": "temporal",
       "axis": {
-        "title": "",
+        "title": "Year",
         "titleColor": "#122B39",
         "grid": false
       }
@@ -45,11 +44,10 @@
       "field": "GDP-perCapita",
       "type": "quantitative",
       "axis": {
-        "title": "",
+        "title": "GDP per capita (current US$)",
         "titleColor": "#122B39",
         "grid": false
       }
     }
   }
 }
-Description
