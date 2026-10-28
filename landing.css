@@ -30,7 +30,7 @@ GRID CONFIGURATION
    +++++++++++++++++++++++++++++++++++++++ */
 
   .hero {
-    height: 70vh;
+    height: 100vh;
     background-image: url('238A1133.jpg');
     background-size: cover;
     background-position: center;
