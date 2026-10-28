@@ -51,7 +51,7 @@ GRID CONFIGURATION
 /*Header*/
   .hero-header {
     font-size: 0.8rem;
-    color: #fff;
+    color: #024473;
     padding: 1px 1px;
     line-height: 1.6;
     font-weight: 300;
@@ -80,7 +80,7 @@ GRID CONFIGURATION
     font-size: 5.5rem;
     font-weight: 700;
     backdrop-filter: blur(5px);  
-    color: #fff;
+    color: #024473;
     line-height: 1.1;
     margin-top: 10px;
     margin-bottom: 0px;
