@@ -27,6 +27,30 @@ GRID CONFIGURATION
   grid-column: 2;
 }
 
+
+/* +++++++++++++++++++++++++++++++++++++++
+NAV BAR
+  +++++++++++++++++++++++++++++++++++++++ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+
 /* +++++++++++++++++++++++++++++++++++++++
   HERO PHOTOGRAPHY
    +++++++++++++++++++++++++++++++++++++++ */
