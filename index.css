@@ -33,6 +33,7 @@ NAV BAR
   +++++++++++++++++++++++++++++++++++++++ */
 .navbar {
   display: flex;
+  height: 5vh;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
