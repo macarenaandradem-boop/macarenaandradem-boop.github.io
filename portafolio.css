@@ -27,40 +27,6 @@ GRID CONFIGURATION
   grid-column: 2;
 }
 
-/* +++++++++++++++++++++++++++++++++++++++
-  HERO PHOTOGRAPHY
-   +++++++++++++++++++++++++++++++++++++++ */
-
-  .hero {
-    height: 70vh;
-    background-image: url('
-
-body { /* We can style any HTML element by using its name - here we're styling the body */
-  /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
-  /*get rid of any white space*/
-  margin: 0;
-  padding: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  color: #080911;
-  line-height: 1.6;
-  background-color: #fff;
-  margin:0 auto;
-  padding-top: 0px;
-}
-
-/*+++++++++++++++++++++++++++++++++++++++ 
-GRID CONFIGURATION
-++++++++++++++++++++++++++++++++++++++ */ 
-/*3 column*/
-.layout-grid {
-  display: grid;
-  grid-template-columns: minmax(20px, 1fr) minmax(0, 1200px) minmax(20px, 1fr);
-}
-/*Everything falls in the middle grid by defect*/
-.layout-grid > * {
-  grid-column: 2;
-}
 
 /* +++++++++++++++++++++++++++++++++++++++
   HERO PHOTOGRAPHY
