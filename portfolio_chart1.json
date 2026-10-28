@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Inequality",
+    "anchor": "start",
+    "subtitle": "Gini coefficient | Source: STATCAN through ECO API",
+    "fontSize": "20",
+    "subtitleFontSize": "12",
+    "color": "#091d4e",
+    "subtitleColor": "#091d4e"
+  },
+  "height": "250",
+  "width": "container",
+  "autosize": {"type": "fit", "contains": "padding"},
+  "background": "#ffffff",
+  "view": {"fill": "#ffffff", "strokeOpacity": 0},
+  "data": {
+    "url": "https://api.economicsobservatory.com/can/ineq?vega",
+    "format": {"type": "json"}
+  },
+  "mark": {"type": "line", "color": "#5115f4", "strokeWidth": "2"},
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "axis": {"title": "Year", "titleColor": "#122B39", "grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {
+        "title": "Gini coefficient",
+        "titleColor": "#122B39",
+        "grid": false
+      }
+    }
+  },
+  "config": {}
+}
