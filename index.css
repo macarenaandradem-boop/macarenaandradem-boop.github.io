@@ -49,7 +49,11 @@ NAV BAR
 .nav-links a:hover {
   color: #00bcd4;
 }
-
+/*Navbar uses the 3 grid */
+.layout-grid .navbar {
+  grid-column: 1 / -1;
+  padding: 5px 20px;
+}
 
 /* +++++++++++++++++++++++++++++++++++++++
   HERO PHOTOGRAPHY
