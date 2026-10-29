@@ -28,7 +28,7 @@
   "mark": {
     "type": "point",
     "color": "#0c7583",
-    "strokeWidth": "2",
+    "strokeWidth": "2"
   },
   "encoding": {
     "x": {
