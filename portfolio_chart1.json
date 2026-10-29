@@ -26,7 +26,7 @@
     "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CL-GDP_per_capita.csv"
   },
   "mark": {
-    "type": "point",
+    "type": "bar",
     "color": "#0c7583",
     "strokeWidth": 2
   },
