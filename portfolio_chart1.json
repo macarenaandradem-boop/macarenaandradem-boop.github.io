@@ -23,7 +23,7 @@
     "strokeOpacity": 0
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CL-GDP_per_capita.csv",
+    "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CL-GDP_per_capita.csv"
   },
   "mark": {
     "type": "point",
