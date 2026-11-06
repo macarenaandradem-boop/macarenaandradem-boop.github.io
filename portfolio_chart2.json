@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/LRACTTFECLA156S.csv"
+  },
+  "title": {
+    "text": "Labor Force Participation Rate Female: 15 Years or over for Chile",
+    "subtitle": "Annual Percent (Seasonally Adjusted) - Source: Organization for Economic Co-operation and Development via FRED®",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 800,
+  "height": 300,
+  "mark": {"type": "line", "color": "seagreen", "strokeWidth": 2, "opacity": 1},
+  "encoding": {
+    "x": {"field": "observation_date", "type": "temporal", "title": null},
+    "y": {
+      "field": "LRACTTFECLA156S",
+      "type": "quantitative",
+      "title": "Percent"
+    }
+  },
+  "config": {}
+}
