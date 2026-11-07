@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/Gestion_desempen%CC%83o_percentage.csv"
+  },
+  "height": 600,
+  "width": 800,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "List"},
+    "y": {"field": "Percentage of people", "type": "quantitative"},
+    "xOffset": {"field": "Year"},
+    "color": {"field": "Year", "scale": {"scheme": "tealblues"}}
+  },
+  "config": {}
+}
