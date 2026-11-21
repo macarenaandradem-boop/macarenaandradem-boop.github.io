@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Kilometres of byke roads in Chile",
+  "title": {
+    "text": "Bicycle Lanes in Chile (Kilometres)| December 2025",
+    "anchor": "start",
+    "subtitle": "Source: Geoportal - IDE Chile and Ministerio de Bienes Nacionales",
+    "fontSize": 14,
+    "subtitleFontSize": 12,
+    "color": "#000000",
+    "subtitleColor": "#000000"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CICLOVnac_dic25_ISO.csv"
+  },
+  "height": 600,
+  "width": 800,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "YEAR_EJECUCION", "type": ""},
+    "y": {"aggregate": "sum", "field": "KM", "type": "quantitative"},
+    "color": {
+      "field": "REGION",
+      "title": "Region",
+      "type": "nominal",
+      "scale": {"scheme": "tealblues"}
+    }
+  },
+  "config": {}
+}
