@@ -10,97 +10,105 @@
     "color": "#000000",
     "subtitleColor": "#000000"
   },
-  "data": {
-    "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CICLOVnac_dic25_ISO.csv"
-  },
   "height": 500,
   "width": 700,
-  "params": [
+  "resolve": {"scale": {"color": "independent"}},
+  "layer": [
     {
-      "name": "regionSel",
-      "select": {"type": "point", "fields": ["REGION"]},
-      "bind": "legend"
-    }
-  ],
-  "transform": [
+      "data": {
+        "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CICLOVnac_dic25_ISO.csv"
+      },
+      "params": [
+        {
+          "name": "regionSel",
+          "select": {"type": "point", "fields": ["REGION"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        {"filter": "year(datum.YEAR_EJECUCION) >= 2000"},
+        {"calculate": "toDate(datum.YEAR_EJECUCION)", "as": "fecha"},
+        {
+          "aggregate": [{"op": "sum", "field": "KM", "as": "km_anio"}],
+          "groupby": ["REGION", "fecha"]
+        },
+        {
+          "window": [{"op": "sum", "field": "km_anio", "as": "km_acum"}],
+          "groupby": ["REGION"],
+          "sort": [{"field": "fecha"}],
+          "frame": [null, 0]
+        }
+      ],
+      "mark": {"type": "line", "point": true, "strokeWidth": 2},
+      "encoding": {
+        "x": {
+          "field": "fecha",
+          "type": "temporal",
+          "title": "Year",
+          "axis": {"grid": false, "format": "%Y", "tickCount": "year", "labelAngle": 0}
+        },
+        "y": {
+          "field": "km_acum",
+          "type": "quantitative",
+          "title": "Cumulative length of bicycle lanes (km)"
+        },
+        "color": {
+          "field": "REGION",
+          "type": "nominal",
+          "title": "Region (click to select)",
+          "scale": {"scheme": "tealblues"},
+          "legend": {"symbolType": "stroke"}
+        },
+        "opacity": {
+          "condition": {"param": "regionSel", "value": 1},
+          "value": 0.12
+        },
+        "tooltip": [
+          {"field": "REGION", "title": "Region"},
+          {"field": "fecha", "type": "temporal", "format": "%Y", "title": "Year"},
+          {"field": "km_acum", "type": "quantitative", "format": ",.1f", "title": "Cumulative km"}
+        ]
+      }
+    },
     {
-      "filter": "year(datum.YEAR_EJECUCION) >= 2000"
-    },
-    {"calculate": "toDate(datum.YEAR_EJECUCION)", "as": "fecha"},
-    {
-      "aggregate": [{"op": "sum", "field": "KM", "as": "km_anio"}],
-      "groupby": ["REGION", "fecha"]
-    },
-    {
-      "window": [{"op": "sum", "field": "km_anio", "as": "km_acum"}],
-      "groupby": ["REGION"],
-      "sort": [{"field": "fecha"}],
-      "frame": [null, 0]
-    }
-  ],
-  "mark": {"type": "line", "point": true, "strokeWidth": 2},
-  "encoding": {
-    "x": {
-      "field": "fecha",
-      "type": "temporal",
-      "title": "Year",
-      "axis": {"grid": false, "format": "%Y", "tickCount": "year", "labelAngle": 0}
-    },
-    "y": {
-      "field": "km_acum",
-      "type": "quantitative",
-      "title": "Cumulative length of bicycle lanes (km)"
-    },
-    "color": {
-      "field": "REGION",
-      "type": "nominal",
-      "title": "Region (click to select)",
-      "scale": {"scheme": "tealblues"},
-      "legend": {"symbolType": "stroke"}
-    },
-    "opacity": {
-      "condition": {"param": "regionSel", "value": 1},
-      "value": 0.12
-    },
-    "tooltip": [
-      {"field": "REGION", "title": "Region"},
-      {"field": "fecha", "type": "temporal", "format": "%Y", "title": "Year"},
-      {"field": "km_acum", "type": "quantitative", "format": ",.1f", "title": "Cumulative km"}
-    ]
-  }
-  {
-    "data": {
+      "data": {
         "values": [
-          {"year": "2021-01-01", "series": "Change and/or re-election of governor"},
-          {"year": "2024-01-01", "series": "Change and/or re-election of governor"}
+          {"fecha": "2021-01-01", "evento": "Change and/or re-election of governor"},
+          {"fecha": "2024-01-01", "evento": "Change and/or re-election of governor"}
         ]
       },
-
       "mark": {
         "type": "rule",
+        "color": "#888888",
         "strokeDash": [4, 4],
         "strokeWidth": 1.5
       },
       "encoding": {
-        "x": {
-          "field": "year",
-          "type": "temporal"
-        },
-        "color": {
-          "field": "series",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "Cumulative length of bicycle lanes (km) per region",
-              "Change and/or re-election of governor"
-            ],
-            "range": ["#0072B2", "#888888"]
-          },
-          "legend": {
-            "title": "Indicator",
-            "orient": "bottom"
-          }
-        }
+        "x": {"field": "fecha", "type": "temporal"},
+        "tooltip": [
+          {"field": "evento", "title": "Event"},
+          {"field": "fecha", "type": "temporal", "format": "%Y", "title": "Year"}
+        ]
+      }
+    },
+    {
+      "data": {"values": [{"nota": "note"}]},
+      "view": {"stroke": null},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "fontSize": 11,
+        "color": "#444444",
+        "text": [
+          "Note: Dashed lines mark regional governor changes and/or re-elections.",
+          "The first election of governors took place in 2021; previously, they were appointed by the President of the Republic."
+        ]
+      },
+      "encoding": {
+        "x": {"value": 0},
+        "y": {"value": 0}
       }
     }
+  ]
 }
