@@ -10,6 +10,8 @@
 		"anchor": "start", 
 		"subtitle": "Source: Geoportal - IDE Chile and Ministerio de Bienes Nacionales"
 	}, 
+	"height": 280, 
+    "width": 700,
 	"config": 
 	{
 		"view": 
@@ -22,25 +24,23 @@
 
 "layer":[
   {
+	"transform": [
+    {
+      "filter": "year(datum.YEAR_EJECUCION) >= 2000"
+    }
+    ],
     "mark": 
     {
       "type": "line", 
       "color": "#c8102e", 
       "strokeWidth": 1.5
     }, 
-    "height": 280, 
-    "width": 700,
-    
-    "transform": [
-    {
-      "filter": "year(datum.YEAR_EJECUCION) >= 2000"
-    }
-    ],
+
     "encoding": 
     {
       "x": {"axis": {"grid": false,  "tickCount":"year","format":"%Y", "labelAngle":0}, "field": "YEAR_EJECUCION", "title": "Year", "type": "temporal"}, 
       "y": {"aggregate": "sum", "field": "KM", "title": "Total length of opened bicycle lanes (in kilometers)", "type": "quantitative", "scale":{"domain":[0,1000]}}
-    },
+    }
   }, 
 
 
@@ -52,7 +52,7 @@
        {"year":"2010-01-01"}, 
        {"year":"2014-01-01"},
        {"year":"2018-01-01"},
-      {"year":"2022-01-01"} 
+		  {"year":"2022-01-01"} 
       ]
       },
 
