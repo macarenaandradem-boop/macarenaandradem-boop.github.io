@@ -27,20 +27,28 @@
               "bind": "legend"
             }
           ],
-          "transform": [
-            {"filter": "year(datum.YEAR_EJECUCION) >= 2000"},
-            {"calculate": "toDate(datum.YEAR_EJECUCION)", "as": "fecha"},
-            {
-              "aggregate": [{"op": "sum", "field": "KM", "as": "km_anio"}],
-              "groupby": ["REGION", "fecha"]
-            },
-            {
-              "window": [{"op": "sum", "field": "km_anio", "as": "km_acum"}],
-              "groupby": ["REGION"],
-              "sort": [{"field": "fecha"}],
-              "frame": [null, 0]
-            }
-          ],
+        "transform": [
+          {"filter": "year(datum.YEAR_EJECUCION) >= 2000 && year(datum.YEAR_EJECUCION) <= 2025"},
+          {"calculate": "year(datum.YEAR_EJECUCION)", "as": "anio"},
+          {
+            "aggregate": [{"op": "sum", "field": "KM", "as": "km_anio"}],
+            "groupby": ["REGION", "anio"]
+          },
+          {
+            "impute": "km_anio",
+            "key": "anio",
+            "keyvals": {"start": 2000, "stop": 2026},
+            "groupby": ["REGION"],
+            "value": 0
+          },
+          {
+            "window": [{"op": "sum", "field": "km_anio", "as": "km_acum"}],
+            "groupby": ["REGION"],
+            "sort": [{"field": "anio"}],
+            "frame": [null, 0]
+          },
+          {"calculate": "datetime(datum.anio, 0, 1)", "as": "fecha"}
+        ],
           "mark": {"type": "line", "point": true, "strokeWidth": 2},
           "encoding": {
             "x": {
