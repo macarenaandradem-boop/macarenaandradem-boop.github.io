@@ -1,6 +1,6 @@
 {	
-	"$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json"
-		"title":
+	"$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json",
+	"title":
 	{
 		"text": "Bicycle Lanes in Chile opened in Chile (Kilometres)", 
 		"anchor": "start", 
@@ -30,7 +30,6 @@
 		"y": {"aggregate": "sum", "field": "KM", "title": "Total length of opened bicycle lanes (in kilometers)", "type": "quantitative"}
 	}, 
 	"height": 280, 
-
-	"width": 700, 
+	"width": 700
 
 }
