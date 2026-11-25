@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Cumulative kilometres of bicycle lanes in Chile, by region",
   "title": {
-    "text": "Cumulative kilometres of bicycle lanes in Chile, by region",
+    "text": "Bicycle Lanes in Chile: cumulative kilometres | December 2025",
     "anchor": "start",
     "subtitle": "Source: Geoportal - IDE Chile and Ministerio de Bienes Nacionales",
     "fontSize": 14,
@@ -23,32 +23,32 @@
           "params": [
             {
               "name": "regionSel",
-              "select": {"type": "point", "fields": ["region"]},
+              "select": {"type": "point", "fields": ["Region"]},
               "bind": "legend"
             }
           ],
-        "transform": [
-          {"filter": "year(datum.YEAR_EJECUCION) >= 2000 && year(datum.YEAR_EJECUCION) <= 2025"},
-          {"calculate": "year(datum.YEAR_EJECUCION)", "as": "anio"},
-          {
-            "aggregate": [{"op": "sum", "field": "KM", "as": "km_anio"}],
-            "groupby": ["region", "anio"]
-          },
-          {
-            "impute": "km_anio",
-            "key": "anio",
-            "keyvals": {"start": 2000, "stop": 2026},
-            "groupby": ["region"],
-            "value": 0
-          },
-          {
-            "window": [{"op": "sum", "field": "km_anio", "as": "km_acum"}],
-            "groupby": ["region"],
-            "sort": [{"field": "anio"}],
-            "frame": [null, 0]
-          },
-          {"calculate": "datetime(datum.anio, 0, 1)", "as": "fecha"}
-        ],
+          "transform": [
+            {"filter": "year(datum.YEAR_EJECUCION) >= 2000 && year(datum.YEAR_EJECUCION) <= 2025"},
+            {"calculate": "year(datum.YEAR_EJECUCION)", "as": "anio"},
+            {
+              "aggregate": [{"op": "sum", "field": "KM", "as": "km_anio"}],
+              "groupby": ["Region", "anio"]
+            },
+            {
+              "impute": "km_anio",
+              "key": "anio",
+              "keyvals": {"start": 2000, "stop": 2026},
+              "groupby": ["Region"],
+              "value": 0
+            },
+            {
+              "window": [{"op": "sum", "field": "km_anio", "as": "km_acum"}],
+              "groupby": ["Region"],
+              "sort": [{"field": "anio"}],
+              "frame": [null, 0]
+            },
+            {"calculate": "datetime(datum.anio, 0, 1)", "as": "fecha"}
+          ],
           "mark": {"type": "line", "point": true, "strokeWidth": 2},
           "encoding": {
             "x": {
@@ -63,9 +63,10 @@
               "title": "Cumulative length of bicycle lanes (km)"
             },
             "color": {
-              "field": "region",
+              "field": "Region",
               "type": "nominal",
               "title": "Region (click to select)",
+              "sort":"ascending",
               "scale": {"scheme": "tealblues"},
               "legend": {"symbolType": "stroke"}
             },
@@ -74,7 +75,7 @@
               "value": 0.12
             },
             "tooltip": [
-              {"field": "region", "title": "Region"},
+              {"field": "Region", "title": "Region"},
               {"field": "fecha", "type": "temporal", "format": "%Y", "title": "Year"},
               {"field": "km_acum", "type": "quantitative", "format": ",.1f", "title": "Cumulative km"}
             ]
