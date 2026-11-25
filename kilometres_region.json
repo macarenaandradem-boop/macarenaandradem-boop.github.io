@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Cumulative kilometres of bicycle lanes in Chile, by region",
   "title": {
-    "text": "Bicycle Lanes in Chile: cumulative kilometres | December 2025",
+    "text": "Cumulative kilometres of bicycle lanes in Chile, by region",
     "anchor": "start",
     "subtitle": "Source: Geoportal - IDE Chile and Ministerio de Bienes Nacionales",
     "fontSize": 14,
