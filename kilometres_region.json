@@ -68,4 +68,39 @@
       {"field": "km_acum", "type": "quantitative", "format": ",.1f", "title": "Cumulative km"}
     ]
   }
+  {
+    "data": {
+        "values": [
+          {"year": "2021-01-01", "series": "Change and/or re-election of governor"},
+          {"year": "2024-01-01", "series": "Change and/or re-election of governor"}
+        ]
+      },
+
+      "mark": {
+        "type": "rule",
+        "strokeDash": [4, 4],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Cumulative length of bicycle lanes (km) per region",
+              "Change and/or re-election of governor"
+            ],
+            "range": ["#0072B2", "#888888"]
+          },
+          "legend": {
+            "title": "Indicator",
+            "orient": "bottom"
+          }
+        }
+      }
+    }
 }
