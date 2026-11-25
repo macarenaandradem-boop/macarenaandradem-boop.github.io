@@ -18,7 +18,7 @@
   {
 	"transform": [
     {
-      "filter": "year(datum.YEAR_EJECUCION) >= 2000"
+      "filter": "year(datum.YEAR_EJECUCION) >= 2000&& year(datum.YEAR_EJECUCION)<=2025"
     }
     ],
     "mark": 
