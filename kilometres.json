@@ -1,17 +1,17 @@
 {
-	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"title":
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"title":
 	{
 		"text": "Bicycle Lanes opened in Chile (Kilometres)", 
 		"anchor": "start", 
 		"subtitle": "Source: Geoportal - IDE Chile and Ministerio de Bienes Nacionales"
 	}, 
-	"data":
+"data":
 	{
 		"url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CICLOVnac_dic25_ISO.csv"
 	}, 
-	"height": 280, 
-  "width": 700,
+"height": 280, 
+"width": 700,
 
 "resolve": {"scale": {"x": "shared"}},
 "layer":[
