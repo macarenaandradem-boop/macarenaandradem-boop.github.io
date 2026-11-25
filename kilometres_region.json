@@ -23,7 +23,7 @@
           "params": [
             {
               "name": "regionSel",
-              "select": {"type": "point", "fields": ["REGION"]},
+              "select": {"type": "point", "fields": ["region"]},
               "bind": "legend"
             }
           ],
@@ -32,18 +32,18 @@
           {"calculate": "year(datum.YEAR_EJECUCION)", "as": "anio"},
           {
             "aggregate": [{"op": "sum", "field": "KM", "as": "km_anio"}],
-            "groupby": ["REGION", "anio"]
+            "groupby": ["region", "anio"]
           },
           {
             "impute": "km_anio",
             "key": "anio",
             "keyvals": {"start": 2000, "stop": 2026},
-            "groupby": ["REGION"],
+            "groupby": ["region"],
             "value": 0
           },
           {
             "window": [{"op": "sum", "field": "km_anio", "as": "km_acum"}],
-            "groupby": ["REGION"],
+            "groupby": ["region"],
             "sort": [{"field": "anio"}],
             "frame": [null, 0]
           },
@@ -63,7 +63,7 @@
               "title": "Cumulative length of bicycle lanes (km)"
             },
             "color": {
-              "field": "REGION",
+              "field": "region",
               "type": "nominal",
               "title": "Region (click to select)",
               "scale": {"scheme": "tealblues"},
@@ -74,7 +74,7 @@
               "value": 0.12
             },
             "tooltip": [
-              {"field": "REGION", "title": "Region"},
+              {"field": "region", "title": "Region"},
               {"field": "fecha", "type": "temporal", "format": "%Y", "title": "Year"},
               {"field": "km_acum", "type": "quantitative", "format": ",.1f", "title": "Cumulative km"}
             ]
