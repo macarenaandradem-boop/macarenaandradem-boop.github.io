@@ -1,5 +1,9 @@
 {	
 	"$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json",
+	"data":
+	{
+		"url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CICLOVnac_dic25_ISO.csv"
+	}, 
 	"title":
 	{
 		"text": "Bicycle Lanes in Chile opened in Chile (Kilometres)", 
@@ -14,10 +18,7 @@
 			"continuousHeight": 300
 		}
 	}, 
-	"data":
-	{
-		"url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CICLOVnac_dic25_ISO.csv"
-	}, 
+
 	"mark": 
 	{
 		"type": "line", 
