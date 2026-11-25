@@ -10,9 +10,11 @@
     "color": "#000000",
     "subtitleColor": "#000000"
   },
-  "height": 500,
-  "width": 700,
-  "resolve": {"scale": {"color": "independent"}},
+  "vconcat": [
+    {
+      "height": 500,
+      "width": 700,
+      "resolve": {"scale": {"color": "independent"}},
   "layer": [
     {
       "data": {
