@@ -1,8 +1,8 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "description": "Kilometres of byke roads in Chile",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Cumulative kilometres of bicycle lanes in Chile, by region",
   "title": {
-    "text": "Bicycle Lanes in Chile (Kilometres)| December 2025",
+    "text": "Bicycle Lanes in Chile: cumulative kilometres | December 2025",
     "anchor": "start",
     "subtitle": "Source: Geoportal - IDE Chile and Ministerio de Bienes Nacionales",
     "fontSize": 14,
@@ -13,19 +13,59 @@
   "data": {
     "url": "https://raw.githubusercontent.com/macarenaandradem-boop/macarenaandradem-boop.github.io/refs/heads/main/CICLOVnac_dic25_ISO.csv"
   },
-  "height": 600,
-  "width": 800,
-  "autosize": {"type": "fit", "contains": "padding"},
-  "mark": {"type": "line", "point": true},
+  "height": 500,
+  "width": 700,
+  "params": [
+    {
+      "name": "regionSel",
+      "select": {"type": "point", "fields": ["REGION"]},
+      "bind": "legend"
+    }
+  ],
+  "transform": [
+    {
+      "filter": "year(datum.YEAR_EJECUCION) >= 2000"
+    },
+    {"calculate": "toDate(datum.YEAR_EJECUCION)", "as": "fecha"},
+    {
+      "aggregate": [{"op": "sum", "field": "KM", "as": "km_anio"}],
+      "groupby": ["REGION", "fecha"]
+    },
+    {
+      "window": [{"op": "sum", "field": "km_anio", "as": "km_acum"}],
+      "groupby": ["REGION"],
+      "sort": [{"field": "fecha"}],
+      "frame": [null, 0]
+    }
+  ],
+  "mark": {"type": "line", "point": true, "strokeWidth": 2},
   "encoding": {
-    "x": {"field": "YEAR_EJECUCION", "type": ""},
-    "y": {"aggregate": "sum", "field": "KM", "type": "quantitative"},
+    "x": {
+      "field": "fecha",
+      "type": "temporal",
+      "title": "Year",
+      "axis": {"grid": false, "format": "%Y", "tickCount": "year", "labelAngle": 0}
+    },
+    "y": {
+      "field": "km_acum",
+      "type": "quantitative",
+      "title": "Cumulative length of bicycle lanes (km)"
+    },
     "color": {
       "field": "REGION",
-      "title": "Region",
       "type": "nominal",
-      "scale": {"scheme": "tealblues"}
-    }
-  },
-  "config": {}
+      "title": "Region (click to select)",
+      "scale": {"scheme": "tealblues"},
+      "legend": {"symbolType": "stroke"}
+    },
+    "opacity": {
+      "condition": {"param": "regionSel", "value": 1},
+      "value": 0.12
+    },
+    "tooltip": [
+      {"field": "REGION", "title": "Region"},
+      {"field": "fecha", "type": "temporal", "format": "%Y", "title": "Year"},
+      {"field": "km_acum", "type": "quantitative", "format": ",.1f", "title": "Cumulative km"}
+    ]
+  }
 }
