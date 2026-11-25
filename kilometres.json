@@ -25,10 +25,15 @@
 		"color": "#c8102e", 
 		"strokeWidth": 1.5
 	}, 
-	"encoding": 
+	"transform": [
+  {
+    "filter": "year(datum.YEAR_EJECUCION) >= 2000"
+  }
+],
+  "encoding": 
 	{
-		"x": {"axis": {"grid": false}, "field": "YEAR_EJECUCION", "title": "Year", "type": "temporal"}, 
-		"y": {"aggregate": "sum", "field": "KM", "title": "Total length of opened bicycle lanes (in kilometers)", "type": "quantitative"}
+		"x": {"axis": {"grid": false,  "tickCount":"year", "format":"%Y", "labelAngle":0}, "field": "YEAR_EJECUCION", "title": "Year", "type": "temporal"}, 
+		"y": {"aggregate": "sum", "field": "KM", "title": "Total length of opened bicycle lanes (in kilometers)", "type": "quantitative", "scale":{"domain":[0,1000]}}
 	}, 
 	"height": 280, 
 	"width": 700
